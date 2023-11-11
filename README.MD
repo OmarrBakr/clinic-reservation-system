@@ -1,4 +1,4 @@
-# ClinicReservationSystem
+# Clinic Reservation System
 
 To run the code type the following commands:
 1. npm install
