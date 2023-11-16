@@ -1,0 +1,435 @@
+{
+	"info": {
+		"_postman_id": "d91b5527-38f3-40cd-b210-ec66aaa54d57",
+		"name": "Clinic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27558427"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRlZWI1NTYzYWZmZjBjZmM0ZTgyOWUiLCJlbWFpbCI6ImRvY3RvcjFAZ29vZ2xlLmNvbSIsInVzZXJUeXBlIjoiRG9jdG9yIiwiaWF0IjoxNjk5NjcwODY5LCJleHAiOjE3MDIyNjI4Njl9.u3EB-oks_tdKcN64bqwM20NZlanQDuO2ZQNtgGlKUIw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"patient1@google.com\",\r\n    \"password\":\"123456789\",\r\n    \"userType\":\"Patient\",\r\n    \"name\":\"patient\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/auth/register",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"patient@google.com\",\r\n    \"password\":\"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/auth/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create slot",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRlNjUwMjY3ZjM5MTE4YzRlZjA3MDQiLCJlbWFpbCI6ImRvY3RvckBnb29nbGUuY29tIiwidXNlclR5cGUiOiJEb2N0b3IiLCJpYXQiOjE3MDAxNjA5MzIsImV4cCI6MTcwMjc1MjkzMn0.JMbG6GGClsC7h7ENjDd4dFHwALR5QqxsjAyZw2ejenM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\":\"12/19/2023\",\r\n    \"hour\":\"22:55\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/slots/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"slots",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update slot",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRlNjUwMjY3ZjM5MTE4YzRlZjA3MDQiLCJlbWFpbCI6ImRvY3RvckBnb29nbGUuY29tIiwidXNlclR5cGUiOiJEb2N0b3IiLCJpYXQiOjE2OTk2NzQxNzksImV4cCI6MTcwMjI2NjE3OX0.S97GFh7wuMFbQuw7GrD6uk4vMwrQWOD1IuRCfn3p59Y",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\":\"11/11/2023\",\r\n    \"hour\":\"23:21\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/slots/654ef2573eb0c90e60956b09",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"slots",
+						"654ef2573eb0c90e60956b09"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all doctor slots",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRlZWYwNjJmZjU1ODBhNzAzY2I5MTciLCJlbWFpbCI6InBhdGllbnRAZ29vZ2xlLmNvbSIsInVzZXJUeXBlIjoiUGF0aWVudCIsImlhdCI6MTcwMDE2MTAzMCwiZXhwIjoxNzAyNzUzMDMwfQ.7aDzvLqlLMCUD8k1CiLOfJxQv5n7buJm1yqgU2kAj0Y",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/slots/doctor/654e650267f39118c4ef0704",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"slots",
+						"doctor",
+						"654e650267f39118c4ef0704"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get slot",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRlNjUwMjY3ZjM5MTE4YzRlZjA3MDQiLCJlbWFpbCI6ImRvY3RvckBnb29nbGUuY29tIiwidXNlclR5cGUiOiJEb2N0b3IiLCJpYXQiOjE2OTk2NzQxNzksImV4cCI6MTcwMjI2NjE3OX0.S97GFh7wuMFbQuw7GrD6uk4vMwrQWOD1IuRCfn3p59Y",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/slots/654efeabdd39e43bd0b8de35",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"slots",
+						"654efeabdd39e43bd0b8de35"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete slot",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRlNjUwMjY3ZjM5MTE4YzRlZjA3MDQiLCJlbWFpbCI6ImRvY3RvckBnb29nbGUuY29tIiwidXNlclR5cGUiOiJEb2N0b3IiLCJpYXQiOjE2OTk2ODExMDUsImV4cCI6MTcwMjI3MzEwNX0.IgysX_e7AqR-zj7EdP21Tkyb0Ehn6IO-jDHus6xIER4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/slots/654f1886699a282b9c5e25df",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"slots",
+						"654f1886699a282b9c5e25df"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create appointment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRlZWYwNjJmZjU1ODBhNzAzY2I5MTciLCJlbWFpbCI6InBhdGllbnRAZ29vZ2xlLmNvbSIsInVzZXJUeXBlIjoiUGF0aWVudCIsImlhdCI6MTcwMDE2MTAzMCwiZXhwIjoxNzAyNzUzMDMwfQ.7aDzvLqlLMCUD8k1CiLOfJxQv5n7buJm1yqgU2kAj0Y",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/appointments/655665bc85278723ccf317b4",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"appointments",
+						"655665bc85278723ccf317b4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete appointment",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRlZWYwNjJmZjU1ODBhNzAzY2I5MTciLCJlbWFpbCI6InBhdGllbnRAZ29vZ2xlLmNvbSIsInVzZXJUeXBlIjoiUGF0aWVudCIsImlhdCI6MTY5OTY4MjU0MSwiZXhwIjoxNzAyMjc0NTQxfQ.O_u0mce4N7KeJzcPiFDKG796Gfv4KBKBLp3r4v9iIPk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/appointments/654f1886699a282b9c5e25df",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"appointments",
+						"654f1886699a282b9c5e25df"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update appointment",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRlZWYwNjJmZjU1ODBhNzAzY2I5MTciLCJlbWFpbCI6InBhdGllbnRAZ29vZ2xlLmNvbSIsInVzZXJUeXBlIjoiUGF0aWVudCIsImlhdCI6MTY5OTY4NDI1NiwiZXhwIjoxNzAyMjc2MjU2fQ.89hNZQ7v6lnb2oKCvwxnyIc0fva-nTho6_Kw6ATLTWU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"slot\":\"654f15bf4f2a710650f7cb24\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/appointments/6556665d85278723ccf317b9",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"appointments",
+						"6556665d85278723ccf317b9"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get appointment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRlZWYwNjJmZjU1ODBhNzAzY2I5MTciLCJlbWFpbCI6InBhdGllbnRAZ29vZ2xlLmNvbSIsInVzZXJUeXBlIjoiUGF0aWVudCIsImlhdCI6MTY5OTY4NDgwNSwiZXhwIjoxNzAyMjc2ODA1fQ.h4-3m-teU9ZyKld-peFp9MtuMnMGnnOaAQAiHIwSafU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/appointments/654f1f16c41851378877f995",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"appointments",
+						"654f1f16c41851378877f995"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all patient appointments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRmMTdhNTc0N2FlNjFkYjhjMDM4NWUiLCJlbWFpbCI6InBhdGllbnQyQGdvb2dsZS5jb20iLCJ1c2VyVHlwZSI6IlBhdGllbnQiLCJpYXQiOjE2OTk2ODY3ODgsImV4cCI6MTcwMjI3ODc4OH0.8BVPycCtC_0W8nhpV24A5XlPz6YAxFHfC-mIFtAzThc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/appointments/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"appointments",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
